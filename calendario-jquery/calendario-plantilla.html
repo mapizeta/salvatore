@@ -1,0 +1,112 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+    "http://www.w3.org/TR/html4/strict.dtd"
+    >
+<html lang="es">
+<head>
+    <title>Layout del calendario</title>
+<style type="text/css">
+body{
+	font-family: tahoma, verdana, sans-serif;
+}
+.capacalendario{
+	width: 219px;
+}
+.capacalendarioborde{
+	padding: 3px;
+	border: 1px solid #ddd;
+}
+.diassemana{
+	overflow: hidden;
+	background: #339;
+	margin: 3px 0;
+}
+.diasmes{
+	overflow: hidden;
+}
+.diassemana span, .diasmes span{
+	margin: 3px;
+	width: 25px;
+	display: block;
+	float: left;
+	text-align: center;
+	height: 1.5em;
+	line-height: 1.5em;
+	font-size: 0.875em;
+}
+.diassemana span{
+	text-transform: uppercase;
+	color: #fff;
+	font-weight: bold;
+	height: 1.8em;
+	line-height: 1.8em;
+}
+.diasmes span{
+	background: #ddd;
+}
+.diasmes span.diainvalido{
+	background: #aaa;
+}
+.diasmes span.domingo{
+	color: #c00;
+}
+.capacalendario span.primero{
+	margin-left:0 !important;
+}
+.capacalendario span.ultimo{
+	margin-right:0 !important;
+}
+</style>
+</head>
+<body>
+    <div class="capacalendario">
+		<div class="capacalendarioborde">	
+			<div class="diassemana">
+				<span class="primero">l</span>
+				<span>m</span>
+				<span>x</span>
+				<span>j</span>
+				<span>v</span>
+				<span>s</span>
+				<span class="domingosemana ultimo">d</span>
+			</div>
+			<div class="diasmes">
+				<span class="diainvalido primero"></span>
+				<span class="diainvalido"></span>
+				<span class="diainvalido"></span>
+				<span>1</span>
+				<span>2</span>
+				<span>3</span>
+				<span class="domingo ultimo">4</span>
+				<span class="primero">5</span>
+				<span>6</span>
+				<span>7</span>
+				<span>8</span>
+				<span>9</span>
+				<span>10</span>
+				<span class="domingo ultimo">11</span>
+				<span class="primero">12</span>
+				<span>13</span>
+				<span>14</span>
+				<span>15</span>
+				<span>16</span>
+				<span>17</span>
+				<span class="domingo ultimo">18</span>
+				<span class="primero">19</span>
+				<span>20</span>
+				<span>21</span>
+				<span>22</span>
+				<span>23</span>
+				<span>24</span>
+				<span class="domingo ultimo">25</span>
+				<span class="primero">26</span>
+				<span>27</span>
+				<span>28</span>
+				<span>29</span>
+				<span>30</span>
+				<span class="diainvalido"></span>
+				<span class="diainvalido ultimo"></span>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,83 @@
+.report_list li
+{
+	margin-left: 35px;
+	float: left;
+	text-align: center;
+}
+.report_list li a
+{
+	text-decoration: none;
+	color: black;
+	letter-spacing: 1px;
+	font: 12px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+}
+.report_list1 li
+{
+	margin-left: 35px;
+	float: left;
+	text-align: center;
+}
+.report_list1 li a
+{
+	text-decoration: none;
+	color: black;
+	letter-spacing: 1px;
+	font: 12px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+}
+.report_list2 li
+{
+	margin-left: 35px;
+	float: left;
+	text-align: center;
+}
+.report_list2 li a
+{
+	text-decoration: none;
+	color: black;
+	letter-spacing: 1px;
+	font: 12px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+}
+#report_date_range_simple
+{
+	margin-bottom: 3px;
+}
+.report 
+{
+	font-size: .85em;
+}
+#report_summary
+{
+	margin: 0 auto;
+	text-align: center;
+}
+
+#report_summary .summary_row
+{
+	font: normal 17px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	text-decoration: none;
+	letter-spacing: 1px;
+}
+
+#chart_wrapper
+{
+	text-align: center;
+}
+
+.report_list {
+list-style-type: none;
+height: 80px;
+width: 960px;
+margin: 39px;
+}
+.report_list1 {
+list-style-type: none;
+height: 80px;
+width: 960px;
+margin: 39px;
+}
+.report_list2 {
+list-style-type: none;
+height: 80px;
+width: 960px;
+margin: 39px;
+}

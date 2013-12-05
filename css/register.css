@@ -1,0 +1,180 @@
+#register_wrapper
+{
+	float:left;
+	width:70%;
+	font-family:Arial;
+	font-size:13px;
+}
+#mode_form
+{
+	position:relative;
+	padding: 3px 0px 3px 5px;
+	text-decoration: none;
+}
+
+#mode_form select
+{
+background-color: rgb(216, 210, 210);
+border: 1px solid rgb(143, 140, 140);
+border-image-source: initial;
+border-image-slice: initial;
+border-image-width: initial;
+border-image-outset: initial;
+border-image-repeat: initial;
+box-shadow: rgba(20, 20, 20, 0.0980392) 0px 2px 7px inset;
+color: black;
+height: 29px;
+margin: 5px;
+padding-left: 10px;
+width: 200px;
+	font: lighter 14px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+}
+
+
+#mode_form span
+{
+	font: bold 15px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	letter-spacing: 1px;
+}
+
+#add_item_form
+{
+	position:relative;
+	width:100%;
+	padding: 8px 0px 8px 0px;
+	
+}
+
+#new_item_button_register
+{
+	position:absolute;
+	top:3px;
+	right:4px;
+}
+
+#add_item_form input
+{
+ 	border: 1px solid #ccc;
+ 	padding: 2px;
+ 	height: 23px;
+ 	width: 318px;
+	font: 10px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	letter-spacing: 1px;
+}
+
+#item_label,#customer_label
+{
+	font: bold 13px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	letter-spacing: 1px;
+}
+
+#add_item_form label
+{
+	margin: 0px 5px 0px 5px;
+}
+
+#register
+{
+	position:relative;
+	width:100%;
+	padding:0px;
+	border-collapse:collapse;	
+}
+
+#register th
+{	
+	background-color:#3b3a3f;
+	padding:5px;
+	text-align:center;
+	color:#FFFFFF;
+}
+
+#register td
+{
+	/*background-color:#EEEEEE;*/
+	padding:3px;
+	text-align:center;
+	font: 12px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	letter-spacing: 1px;
+}
+
+#overall_sale
+{
+	float:left;
+	margin-left:4px;
+	width:28%;
+	padding:5px;
+	border: 1px solid silver;
+	font: 13px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+}
+
+#sale_details
+{
+	position:relative;
+	width:100%;
+	margin-top:5px;
+	font: normal 12px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	text-decoration: none;
+}
+
+#finish_sale
+{
+	position:relative;
+}
+
+#Payment_Types
+{
+	float:left;
+	width:100%;
+	margin-top:5px;
+	border-top:2px solid #000;
+	margin-bottom:0px;
+	clear:both;
+}
+
+#Cancel_sale
+{
+	float:left;
+	width:100%;
+	margin-top:5px;
+	clear:both;
+}
+
+#customer{
+	height: 28px;
+	width: 200px;
+	margin-top: 10px;
+	font: 12px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	letter-spacing: 1px;
+}
+
+select
+{
+background-color: rgb(216, 210, 210);
+border: 1px solid rgb(143, 140, 140);
+border-image-source: initial;
+border-image-slice: initial;
+border-image-width: initial;
+border-image-outset: initial;
+border-image-repeat: initial;
+box-shadow: rgba(20, 20, 20, 0.0980392) 0px 2px 7px inset;
+color: black;
+height: 29px;
+margin: 5px;
+padding-left: 10px;
+width: 147px;
+	font: lighter 14px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+}
+
+
+#add_item_form input:focus {
+	border-width: 1px;
+	border-color: #79b54e;
+	-webkit-box-shadow:0 1px 2px rgba(0,0, 0, 0.3) inset;
+	-moz-box-shadow:0 1px 2px rgba(0,0, 0, 0.3) inset;
+	-webkit-box-shadow:0 1px 2px rgba(121, 181, 78, 1);
+	-moz-box-shadow:0 1px 2px rgba(121, 181, 78, 1);
+	box-shadow: 0 0 5px rgba(121, 181, 78, 1);
+	outline: none;
+}
+

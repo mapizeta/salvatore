@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+    "http://www.w3.org/TR/html4/strict.dtd"
+    >
+<html lang="en">
+<head>
+    <title>Calendario jQuery</title>
+	
+<style type="text/css">
+a.botoncal{
+	margin-left: 5px;
+	background: transparent url(calendario.png) no-repeat;
+}
+a.botoncal span{
+	display: inline-table;
+	width: 16px;
+	height: 16px;
+}
+</style>
+	<script language="javascript" src="jquery-1.4.4.min.js"></script>
+<script language="javascript" type="text/javascript">
+	
+jQuery.fn.calendarioDW = function() {
+   this.each(function(){
+		var elem = $(this);
+		//creo un enlace-botón para activar el calendario
+		var boton = $("<a class='botoncal' href='#'><span></span></a>");
+		//inserto el enlace-botón después del campo input
+		elem.after(boton);
+		
+		//evento para clic en el botón
+		boton.click(function(e){
+			e.preventDefault();
+			mostrarCalendario();
+		});
+		//evento para clic en el campo
+		elem.click(function(e){
+			this.blur();
+			mostrarCalendario();
+		});
+		
+		//función para mostrar el calendario
+		function mostrarCalendario(){
+			alert("Muestro el calendario");
+		}
+   });
+   return this;
+};
+
+$(document).ready(function(){
+	$("#campofecha").calendarioDW();
+})
+
+</script>
+</head>
+<body>
+    <form>
+		Fecha: <input type="text" name="fecha" id="campofecha" size="12">
+	</form>
+</body>
+</html>

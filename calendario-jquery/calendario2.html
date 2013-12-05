@@ -1,0 +1,160 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+    "http://www.w3.org/TR/html4/strict.dtd"
+    >
+<html lang="en">
+<head>
+    <title>Calendario jQuery</title>
+	
+<style type="text/css">
+body{
+	font-family: tahoma, verdana, sans-serif;
+}
+.capacalendario{
+	width: 219px;
+	position: absolute;
+	display: none;
+}
+.capacalendarioborde{
+	padding: 3px;
+	border: 1px solid #ddd;
+}
+.diassemana{
+	overflow: hidden;
+	background: #339;
+	margin: 3px 0;
+}
+.diasmes{
+	overflow: hidden;
+}
+.diassemana span, .diasmes span{
+	margin: 3px;
+	width: 25px;
+	display: block;
+	float: left;
+	text-align: center;
+	height: 1.5em;
+	line-height: 1.5em;
+	font-size: 0.875em;
+}
+.diassemana span{
+	text-transform: uppercase;
+	color: #fff;
+	font-weight: bold;
+	height: 1.8em;
+	line-height: 1.8em;
+}
+.diasmes span{
+	background: #ddd;
+}
+.diasmes span.diainvalido{
+	background: #aaa;
+}
+.diasmes span.domingo{
+	color: #c00;
+}
+.capacalendario span.primero{
+	margin-left:0 !important;
+}
+.capacalendario span.ultimo{
+	margin-right:0 !important;
+}
+
+a.botoncal{
+	margin-left: 5px;
+	background: transparent url(calendario.png) no-repeat;
+}
+a.botoncal span{
+	display: inline-table;
+	width: 16px;
+	height: 16px;
+	
+}
+</style>
+	<script language="javascript" src="jquery-1.4.4.min.js"></script>
+<script language="javascript" type="text/javascript">
+	
+jQuery.fn.calendarioDW = function() {
+   this.each(function(){
+		//saber si estoy mostrando el calendario
+		var mostrando = false;
+		var calendario;
+		
+		//elemento input
+		var elem = $(this);
+		//creo un enlace-botón para activar el calendario
+		var boton = $("<a class='botoncal' href='#'><span></span></a>");
+		//inserto el enlace-botón después del campo input
+		elem.after(boton);
+		
+		//evento para clic en el botón
+		boton.click(function(e){
+			e.preventDefault();
+			mostrarCalendario();
+		});
+		//evento para clic en el campo
+		elem.click(function(e){
+			this.blur();
+			mostrarCalendario();
+		});
+		
+		//función para mostrar el calendario
+		function mostrarCalendario(){
+			if(!mostrando){
+				mostrando = true;
+				//es que hay que mostrar el calendario
+				//dias de la semana
+				var capaDiasSemana = $('<div class="diassemana"></div>');
+				var dias = ["l", "m", "x", "j", "v", "s", "d"];
+				$(dias).each(function(indice, valor){
+					var codigoInsertar = '<span';
+					if (indice==0){
+						codigoInsertar += ' class="primero"';
+					}
+					if (indice==6){
+						codigoInsertar += ' class="domingo ultimo"';
+					}
+					codigoInsertar += ">" + valor + '</span>';
+					
+					capaDiasSemana.append(codigoInsertar);
+				});
+				
+				//calendario
+				calendario = $('<div class="capacalendario"></div>');
+				var calendarioBorde = $('<div class="capacalendarioborde"></div>');
+				calendario.append(calendarioBorde);
+				calendarioBorde.append(capaDiasSemana);
+				
+				//inserto el calendario en el documento
+				$(document.body).append(calendario);
+				//lo posiciono con respecto al boton
+				calendario.css({
+					top: boton.offset().top + "px",
+					left: (boton.offset().left + 20) + "px"
+				})
+				//muestro el calendario
+				calendario.show("slow");
+				
+			}else{
+				//es que el calendario ya se estaba mostrando...
+				calendario.fadeOut("fast");
+				calendario.fadeIn("fast");
+				
+			}
+			
+		}
+   });
+   return this;
+};
+
+$(document).ready(function(){
+	$("#campofecha").calendarioDW();
+})
+
+</script>
+</head>
+<body>
+    <form>
+		Fecha: <input type="text" name="fecha" id="campofecha" size="12">
+	</form>
+</body>
+</html>

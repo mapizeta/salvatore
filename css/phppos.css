@@ -1,0 +1,195 @@
+@import url(autocomplete.css);
+@import url(menubar.css);
+@import url(general.css);
+@import url(popupbox.css);
+@import url(register.css);
+@import url(receipt.css);
+@import url(reports.css);
+@import url(tables.css);
+@import url(thickbox.css);
+
+body
+{
+	margin:0px;
+	padding:0px;
+	background: url(../images/menubar/bg-body.png) ;
+}
+
+a.none
+{
+	text-decoration:none;
+}
+
+a
+{
+	text-decoration:none;
+}
+
+
+#content_area_wrapper
+{
+	position:relative;
+	width:100%;
+	background-color:#FFFFFF;	
+	margin:0px;
+	padding:0px;
+	/*border-bottom:1px solid #CCCCCC;*/
+	text-align:center;	
+	background: url(../images/menubar/bg-body.png) ;
+
+}
+
+#content_area
+{
+	position: absolute;
+	width: 997px;
+	text-align: left;
+	margin-left: 238px;
+	clear: both;
+	
+}
+
+#title_bar
+{
+	position:relative;
+	margin-top:10px;
+	margin-bottom:10px;
+	width:100%;
+	height:50px;
+}
+
+#title
+{
+	position:absolute;
+	bottom:0px;
+	left:0px;
+	color:#000000;
+	font: bold 30px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	letter-spacing: 1px;
+}	
+
+#page_title
+{
+	margin-top:8px;
+	font: bold 30px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	letter-spacing: 1px;
+	font-weight:bold;
+	color:#000000;
+	text-align:center;
+
+}
+
+#page_subtitle
+{
+	margin-top:8px;
+	color:#000000;
+	text-align:center;
+	font: bold 16px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	letter-spacing: 1px;
+}
+
+#new_button
+{
+	position:absolute;
+	bottom:-5px;
+	right:0px;
+}
+
+#spinner
+{
+	position:absolute;
+	display:none;
+	right:21%;
+	top:5px;
+}
+
+#feedback_bar
+{
+	position:fixed;
+	bottom:0;
+	left:224px;
+	width:83%;
+	height:55px;	
+	opacity: 0;
+	filter: alpha(opacity=0);
+	z-index:1;
+	line-height:3.3;
+}
+
+.texto-secciones{
+	width: 100%;
+	font: normal 19px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	text-decoration: none;
+	color: black;
+	letter-spacing: 1px;
+}
+
+#home_module_list
+{
+	position: relative;
+}
+
+.module_item
+{
+	text-align: center;
+}
+
+.module_item a
+{
+	text-decoration: none;
+	color: black;
+	font: normal 14px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	letter-spacing: 1px;
+}
+
+.module_item a:hover
+{
+	text-decoration: none;
+	color: #ff6400;
+	font: normal 14px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	letter-spacing: 1px;
+}
+
+#config_wrapper
+{
+	text-align:center;
+}
+
+#config_info
+{
+	width:960px;
+	margin:0 auto;
+	padding:10px;
+	margin-bottom:30px;
+	margin-top:10px;
+	text-align:left;
+	height: 400px;
+}
+
+#config_info legend
+{
+	font: normal 14px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	color: black;
+	text-decoration: none;
+	letter-spacing: 1px;
+}
+
+#footer
+{
+	position: absolute;
+	height: 30px;
+	margin-bottom: 0px;
+	text-align: center;
+	font-size: 11px;
+	color: #777777;
+	width: 100%;
+	clear: both;
+	bottom: 0px;
+	
+}
+.graf{
+	width: 100%;float: left;height: 33px;margin-top: 20px;
+	font: normal 20px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	text-decoration: none;
+	letter-spacing: 1px;
+}

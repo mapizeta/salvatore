@@ -1,0 +1,249 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+    "http://www.w3.org/TR/html4/strict.dtd"
+    >
+<html lang="en">
+<head>
+    <title>Calendario jQuery</title>
+	
+<style type="text/css">
+body{
+	font-family: tahoma, verdana, sans-serif;
+}
+.capacalendario{
+	width: 219px;
+	position: absolute;
+	display: none;
+}
+.capacalendarioborde{
+	padding: 3px;
+	border: 1px solid #ddd;
+}
+.diassemana{
+	overflow: hidden;
+	background: #339;
+	margin: 3px 0;
+}
+.diasmes{
+	overflow: hidden;
+}
+.diassemana span, .diasmes span{
+	margin: 3px;
+	width: 25px;
+	display: block;
+	float: left;
+	text-align: center;
+	height: 1.5em;
+	line-height: 1.5em;
+	font-size: 0.875em;
+}
+.diassemana span{
+	text-transform: uppercase;
+	color: #fff;
+	font-weight: bold;
+	height: 1.8em;
+	line-height: 1.8em;
+}
+.diasmes span{
+	background: #ddd;
+}
+.diasmes span.diainvalido{
+	background: #aaa;
+}
+.diasmes span.domingo{
+	color: #c00;
+}
+.capacalendario span.primero{
+	margin-left:0 !important;
+}
+.capacalendario span.ultimo{
+	margin-right:0 !important;
+}
+
+a.botoncal{
+	margin-left: 5px;
+	background: transparent url(calendario.png) no-repeat;
+}
+a.botoncal span{
+	display: inline-table;
+	width: 16px;
+	height: 16px;
+	
+}
+</style>
+	<script language="javascript" src="jquery-1.4.4.min.js"></script>
+<script language="javascript" type="text/javascript">
+	
+jQuery.fn.calendarioDW = function() {
+   this.each(function(){
+		//saber si estoy mostrando el calendario
+		var mostrando = false;
+		var calendario;
+		
+		//elemento input
+		var elem = $(this);
+		//creo un enlace-botón para activar el calendario
+		var boton = $("<a class='botoncal' href='#'><span></span></a>");
+		//inserto el enlace-botón después del campo input
+		elem.after(boton);
+		
+		//evento para clic en el botón
+		boton.click(function(e){
+			e.preventDefault();
+			mostrarCalendario();
+		});
+		//evento para clic en el campo
+		elem.click(function(e){
+			this.blur();
+			mostrarCalendario();
+		});
+		
+//función para mostrar el calendario
+function mostrarCalendario(){
+	if(!mostrando){
+		mostrando = true;
+		//es que hay que mostrar el calendario
+		//dias de la semana
+		var capaDiasSemana = $('<div class="diassemana"></div>');
+		var dias = ["l", "m", "x", "j", "v", "s", "d"];
+		$(dias).each(function(indice, valor){
+			var codigoInsertar = '<span';
+			if (indice==0){
+				codigoInsertar += ' class="primero"';
+			}
+			if (indice==6){
+				codigoInsertar += ' class="domingo ultimo"';
+			}
+			codigoInsertar += ">" + valor + '</span>';
+			
+			capaDiasSemana.append(codigoInsertar);
+		});
+		
+		//muestro los días del mes
+		var contadorDias = 1;
+		var capaDiasMes = $('<div class="diasmes"></div>')
+		//un objeto de la clase date para calculo de fechas
+		var objFecha = new Date()
+		//mes y año actuales
+		var mes = objFecha.getMonth();
+		var ano = objFecha.getFullYear();
+		//calculo la fecha del primer día de este mes
+		var primerDia = calculaNumeroDiaSemana(1, mes, ano);
+		//calculo el último día del mes
+		var ultimoDiaMes = ultimoDia(mes,ano);
+		
+		//escribo la primera fila de la semana
+		for (var i=0; i<7; i++){
+			if (i < primerDia){
+				//si el dia de la semana i es menor que el numero del primer dia de la semana no pongo nada en la celda
+				var codigoDia = '<span class="diainvalido';
+				if (i == 0)
+					codigoDia += " primero";
+				codigoDia += '"></span>';
+			} else {
+				var codigoDia = '<span';
+				if (i == 0)
+					codigoDia += ' class="primero"';
+				if (i == 6)
+					codigoDia += ' class="ultimo"';
+				codigoDia += '>' + contadorDias + '</span>';
+				contadorDias++;
+			}
+			var diaActual = $(codigoDia);
+			capaDiasMes.append(diaActual);
+		}
+		
+		//recorro todos los demás días hasta el final del mes
+		var diaActualSemana = 1;
+		while (contadorDias <= ultimoDiaMes){
+			var codigoDia = '<span';
+			//si estamos a principio de la semana escribo la clase primero
+			if (diaActualSemana % 7 == 1)
+				codigoDia += ' class="primero"';
+			//si estamos al final de la semana es domingo y ultimo dia
+			if (diaActualSemana % 7 == 0)
+				codigoDia += ' class="domingo ultimo"';
+			codigoDia += '>' + contadorDias + '</span>';
+			contadorDias++;
+			diaActualSemana++;
+			var diaActual = $(codigoDia);
+			capaDiasMes.append(diaActual);
+		}
+		
+		//compruebo que celdas me faltan por escribir vacias de la última semana del mes
+		for (var i=(diaActualSemana%7); i<=7; i++){
+			var codigoDia = '<span class="diainvalido';
+			if (i==7)
+				codigoDia += ' ultimo'
+			codigoDia += '"></span>';
+			var diaActual = $(codigoDia);
+			capaDiasMes.append(diaActual);
+		}
+		
+		//calendario
+		calendario = $('<div class="capacalendario"></div>');
+		var calendarioBorde = $('<div class="capacalendarioborde"></div>');
+		calendario.append(calendarioBorde);
+		calendarioBorde.append(capaDiasSemana);
+		calendarioBorde.append(capaDiasMes);
+		
+		//inserto el calendario en el documento
+		$(document.body).append(calendario);
+		//lo posiciono con respecto al boton
+		calendario.css({
+			top: boton.offset().top + "px",
+			left: (boton.offset().left + 20) + "px"
+		})
+		//muestro el calendario
+		calendario.show("slow");
+		
+	}else{
+		//es que el calendario ya se estaba mostrando...
+		calendario.fadeOut("fast");
+		calendario.fadeIn("fast");
+		
+	}
+}
+		
+		//función para calcular el número de un día de la semana
+		function calculaNumeroDiaSemana(dia,mes,ano){
+			var objFecha = new Date(ano, mes, dia);
+			var numDia = objFecha.getDay();
+			if (numDia == 0) 
+				numDia = 6;
+			else
+				numDia--;
+			return numDia;
+		}
+		
+		//función para ver si una fecha es correcta
+		function checkdate ( m, d, y ) {
+			// función por http://kevin.vanzonneveld.net
+			// extraida de las librerías phpjs.org manual en http://www.desarrolloweb.com/manuales/manual-librerias-phpjs.html
+			return m > 0 && m < 13 && y > 0 && y < 32768 && d > 0 && d <= (new Date(y, m, 0)).getDate();
+		}
+		
+		//funcion que devuelve el último día de un mes y año dados
+		function ultimoDia(mes,ano){ 
+			var ultimo_dia=28; 
+			while (checkdate(mes+1,ultimo_dia + 1,ano)){ 
+			   ultimo_dia++; 
+			} 
+			return ultimo_dia; 
+		} 
+		
+   });
+   return this;
+};
+
+$(document).ready(function(){
+	$("#campofecha").calendarioDW();
+})
+
+</script>
+</head>
+<body>
+    <form>
+		Fecha: <input type="text" name="fecha" id="campofecha" size="12">
+	</form>
+</body>
+</html>

@@ -1,0 +1,102 @@
+hr{
+	border: 0;
+	height: 1px;
+	background-image: -webkit-linear-gradient(left, rgba(241,90,35,0), rgba(241,90,35,0.75), rgba(241,90,35,0)); 
+	background-image: -moz-linear-gradient(left, rgba(241,90,35,0), rgba(241,90,35,0.75), rgba(241,90,35,0)); 
+	background-image: -ms-linear-gradient(left, rgba(241,90,355,0), rgba(241,90,35,0.75), rgba(241,90,35,0)); 
+	background-image: -o-linear-gradient(left, rgba(241,90,35,0), rgba(241,90,35,0.75), rgba(241,90,35,0)); 
+}
+
+#menubar
+{
+	position:relative;
+	margin:0px;
+	padding:0px;
+	width:100%;
+	height:100px;
+	color:#FFFFFF;
+	text-align:center;
+	background: url(../images/menubar/menubar_bg.png) repeat-x;
+}
+
+#menubar_container
+{
+	position:relative;
+	margin:0 auto;
+	width:960px;
+	text-align:left;
+}
+
+.menu_item
+{
+	float:left;
+	width:65px;
+	height:100%;
+	text-align:center;	
+}
+
+
+#menubar a:link, #menubar a:visited, #menubar a
+{
+	color:#FFFFFF;
+	text-decoration: none;
+}
+
+#menubar a:hover
+{
+	color:#CCCCCC;
+	text-decoration: none;	
+}
+
+.menu_item
+{
+	font-size:8pt;
+}
+
+#menubar_company_info
+{
+	position:absolute;
+	top:6px;
+	width:100%;
+	height:55%;
+}
+
+#company_title
+{
+	font: bold 23pt "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	text-decoration: none;
+	color: black;
+	letter-spacing: 1px;
+}
+
+#menubar_navigation
+{
+	position:relative;
+	width:72%;
+	left:200px;
+	top:8px;
+	height:45%;
+
+}
+
+#menubar_footer
+{
+	position:absolute;
+	top:80px;
+	left:0px;
+	height:17%;
+	padding-top:3px;
+	letter-spacing:1px;
+	font: 8pt "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+}
+
+#menubar_date
+{
+	position:absolute;
+	top:80px;
+	right:0px;
+	height:17%;
+	padding-top:3px;
+	font-size:8pt;
+	font-weight:bold;
+}

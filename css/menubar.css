@@ -1,0 +1,150 @@
+
+#menubar
+{
+	position: absolute;
+	margin: 0px;
+	padding: 0px;
+	background: #3b3a3f;
+	width: 224px;
+	height: 725px;
+	color: #FFFFFF;
+	text-align: center;
+}
+
+#menubar_container
+{
+	position: absolute;
+	margin: 0 auto;
+	width: 224px;
+}
+
+.menu_item
+{
+	width: 224px;
+	height: 78px;
+	text-align: left;
+	/*margin-top: -8px;
+	padding-left: 13px;
+	margin-bottom: 8px;*/
+	border-bottom: 1px solid #2b2b2e;
+}
+
+.menu_item img
+{
+	margin-top: 3px;
+}
+
+
+
+ a .menu_item
+{
+	color: #79b54e;
+	text-decoration: none;
+	font: normal normal 15px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+}
+
+
+ a .menu_item:link
+ {
+	color: black;
+	text-decoration: none;
+	font: normal normal 15px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+}
+
+a .menu_item:hover
+{
+	background: #2b2b2e;
+	color:#79b54e;
+	text-decoration: none;	
+	font: normal normal 15px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+
+}
+
+.menu_item_hover
+{
+	background: #2b2b2e;
+	color:#79b54e;
+	text-decoration: none;	
+	font: normal normal 15px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+
+}
+
+.menu_item_active
+{
+	background: rgb(255,87,45);
+	color:#fff;
+	text-decoration: none;	
+	font: normal normal 12px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+}
+
+.Artículos{
+	background: url(../images/menubar/items48.png) no-repeat center center;
+}
+
+.menu_item
+{
+	font-size:8pt;
+}
+
+#menubar_company_info
+{
+	position: absolute;
+	left: 0px;
+	width: 224px;
+	height: 71px;
+	background: white;
+}
+
+#company_title
+{
+	font-size: 22pt;
+	font-weight: bold;
+	color: black;
+	letter-spacing: 1px;
+}
+
+#menubar_navigation
+{
+	position: absolute;
+	width: 224px;
+	top: 92px;
+	height: 100%;
+
+}
+
+#menubar_footer
+{
+	position: absolute;
+	background: #2b2b2e;
+	top: 71px;
+	width: 224px;
+	left: 0px;
+	height: 18px;
+	padding-top: 3px;
+	letter-spacing: 1px;
+	font: 8pt "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+}
+
+#menubar_footer a:link, #menubar_footer a:visited, #menubar_footer a
+{
+	color: white;
+	text-decoration: none;
+}
+
+#menubar_footer a:hover
+{
+	color: #cccccc;
+	text-decoration: none;
+}
+
+#menubar_date
+{
+	position:absolute;
+	top:80px;
+	right:0px;
+	height:17%;
+	padding-top:3px;
+	font: normal 10px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	letter-spacing: 1px;
+	text-decoration: none;
+}
