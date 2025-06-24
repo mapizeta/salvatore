@@ -36,19 +36,26 @@
 
 $active_group = 'default';
 $active_record = TRUE;
-
-$db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'informat_root';
-$db['default']['password'] = 'pepe123';
-$db['default']['database'] = 'informat_pdv';
-$db['default']['dbdriver'] = 'mysql';
-$db['default']['dbprefix'] = '';
-$db['default']['pconnect'] = FALSE;
-$db['default']['db_debug'] = FALSE;
-$db['default']['cache_on'] = FALSE;
-$db['default']['cachedir'] = '';
-$db['default']['char_set'] = 'utf8';
-$db['default']['dbcollat'] = 'utf8_general_ci';
+$db['default'] = array(
+	'hostname' => 'db',
+	'username' => 'ci_user',
+	'password' => 'secret',
+	'database' => 'ci_db',
+	'dbdriver' => 'mysqli',
+  );
+  
+//$db['default']['hostname'] = 'localhost';
+//$db['default']['username'] = 'informat_root';
+//$db['default']['password'] = 'pepe123';
+//$db['default']['database'] = 'informat_pdv';
+//$db['default']['dbdriver'] = 'mysql';
+//$db['default']['dbprefix'] = '';
+//$db['default']['pconnect'] = FALSE;
+//$db['default']['db_debug'] = FALSE;
+//$db['default']['cache_on'] = FALSE;
+//$db['default']['cachedir'] = '';
+//$db['default']['char_set'] = 'utf8';
+//$db['default']['dbcollat'] = 'utf8_general_ci';
 
 
 /* End of file database.php */

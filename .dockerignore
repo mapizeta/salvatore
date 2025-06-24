@@ -1,0 +1,13 @@
+.git
+.gitignore
+README.md
+Dockerfile
+docker-compose.yml
+docker-entrypoint.sh
+.dockerignore
+*.log
+*.sql
+*.xls
+*.psd
+.DS_Store
+salvatoreV2/ 

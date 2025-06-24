@@ -1,0 +1,42 @@
+version: '3.3'
+
+services:
+  web:
+    build:
+      context: .
+      args:
+        USER_ID: ${USER_ID:-1000}
+        GROUP_ID: ${GROUP_ID:-1000}
+    container_name: ci172-web
+    ports:
+      - "8082:80"
+    volumes:
+      - .:/var/www/html
+    command: >
+      sh -c "
+        chown -R appuser:appuser /var/www/html/application/logs &&
+        chown -R appuser:appuser /var/www/html/application/cache &&
+        chmod -R 755 /var/www/html/application/logs &&
+        chmod -R 755 /var/www/html/application/cache &&
+        apache2-foreground
+      "
+    depends_on:
+      - db
+
+  db:
+    image: mysql:5.7
+    container_name: ci172-db
+    restart: always
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_DATABASE: ci_db
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: ci_user
+      MYSQL_PASSWORD: secret
+    volumes:
+      - ./puntoventa.sql:/docker-entrypoint-initdb.d/puntoventa.sql
+      - mysql_data:/var/lib/mysql
+
+volumes:
+  mysql_data:

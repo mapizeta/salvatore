@@ -1,0 +1,24 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php/$1 [L]
+
+# Configuraciones adicionales de seguridad
+<Files "*.php">
+    Order Allow,Deny
+    Allow from all
+</Files>
+
+# Denegar acceso a archivos sensibles
+<Files "*.sql">
+    Order Deny,Allow
+    Deny from all
+</Files>
+
+<Files "*.log">
+    Order Deny,Allow
+    Deny from all
+</Files>
+
+# Configurar tipos MIME
+AddType application/x-httpd-php .php 
