@@ -11,7 +11,19 @@
 |	http://example.com/
 |
 */
-$config['base_url'] = ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == "on") ? "https" : "http");
+// Mejorada detección de HTTPS para ngrok y otros proxies
+$is_https = false;
+if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == "on") {
+    $is_https = true;
+} elseif (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https') {
+    $is_https = true;
+} elseif (isset($_SERVER['HTTP_X_FORWARDED_SSL']) && $_SERVER['HTTP_X_FORWARDED_SSL'] == 'on') {
+    $is_https = true;
+} elseif (isset($_SERVER['HTTP_X_FORWARDED_PORT']) && $_SERVER['HTTP_X_FORWARDED_PORT'] == '443') {
+    $is_https = true;
+}
+
+$config['base_url'] = ($is_https ? "https" : "http");
 $config['base_url'] .= "://".$_SERVER['HTTP_HOST'];
 $config['base_url'] .= str_replace(basename($_SERVER['SCRIPT_NAME']),"",$_SERVER['SCRIPT_NAME']);
 /*

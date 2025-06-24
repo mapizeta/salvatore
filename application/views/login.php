@@ -2,10 +2,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" rev="stylesheet" href="<?php echo base_url();?>css/login.css" />
+<link rel="stylesheet" rev="stylesheet" href="<?php echo protocol_relative_url();?>css/login.css" />
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <title>Eco Drive</title>
-<script src="<?php echo base_url();?>js/jquery-1.2.6.min.js" type="text/javascript" language="javascript" charset="UTF-8"></script>
+<script src="<?php echo protocol_relative_url();?>js/jquery-1.2.6.min.js" type="text/javascript" language="javascript" charset="UTF-8"></script>
 <script type="text/javascript">
 $(document).ready(function()
 {
@@ -34,7 +34,7 @@ if ($_SERVER['HTTP_HOST'] == 'demo.phppointofsale.com')
 	</div-->
 	<div id="login_form">
 		<div id="welcome_message">
-			<img src="<?php echo base_url();?>images/menubar/logologin.png">
+			<img src="<?php echo protocol_relative_url();?>images/menubar/logologin.png">
 		<?php //echo $this->lang->line('login_welcome_message'); ?>
 		</div>
 		
@@ -60,7 +60,7 @@ if ($_SERVER['HTTP_HOST'] == 'demo.phppointofsale.com')
 		</div>
 	</div>
 </div>
-	<div class="footer">Punto de venta creado por Rowsis.</div>
+	<div class="footer">Punto de venta creado por Pyzarro.</div>
 
 <?php echo form_close(); ?>
 </body>

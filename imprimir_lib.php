@@ -3,7 +3,7 @@
 /* 
  Libreria para manejo de Termo Impresora.
  Manuel Pizarro Mendoza.
- Rowsis Chile.
+ Pyzarro.
 */
 
 /*  
@@ -52,7 +52,7 @@ function dobaltura() // Fuente con doble altura
 fwrite($handle, chr(27). chr(33). chr(16));
 }
 
-function pequeña() // Fuente pequeña
+function pequeï¿½a() // Fuente pequeï¿½a
 { global $handle;
 fwrite($handle, chr(27). chr(33). chr(1));
 }
